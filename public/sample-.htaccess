@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+# Modify the RewriteBase if you are using Trotch in a subdirectory or in a
+# VirtualDocumentRoot and the rewrite rules are not working properly.
+# For example if your site is at http://domain.com/~my/trotch uncomment and
+# modify the following line:
+#
+# RewriteBase /~my/trotch

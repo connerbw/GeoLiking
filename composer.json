@@ -1,0 +1,25 @@
+{
+    "name": "connerbw/Trotch",
+    "type": "project",
+    "homepage": "https://github.com/connerbw/Trotch",
+    "license": "LGPL 2.1",
+    "authors": [
+        { "name": "Dac Chartrand", "email": "dac.chartrand@gmail.com" }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "components/h5validate": "0.9.*",
+        "components/jquery": "1.11.*",
+        "components/jquery-cookie": "1.4.*",
+        "components/jqueryui": "1.11.*",
+        "jamend/selective-orm": "dev-master",
+        "mrclay/minify": "2.2.*",
+        "slim/slim": "2.*",
+        "slim/views": "0.1.*",
+        "twig/twig": "1.*"
+    },
+    "config": {
+        "component-dir": "public/components",
+        "component-baseurl": "/components"
+    }
+}

@@ -1,0 +1,14 @@
+.idea/
+/public/.htaccess
+/public/components/**/*
+/vendor/
+autoload.php
+tmp/**/*
+composer.lock
+composer.phar
+config.php
+logs/**/*
+phpunit.xml
+
+!cache/README.md
+!logs/README.md
