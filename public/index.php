@@ -3,14 +3,20 @@
 require '../config.php';
 require '../vendor/autoload.php';
 
+// Set utf-8
+header('Content-Type: text/html;charset=utf-8');
+mb_internal_encoding('UTF-8');
+mb_regex_encoding('UTF-8');
+mb_language('uni');
+
 // Prepare app
 $app = new \Slim\Slim(array(
     'mode' => 'development',
     'log.enabled' => true,
     'templates.path' => '../templates',
+    'log.writer' => new \Slim\LogWriter(fopen('../logs/app.log', 'a')),
 ));
 
-$app->environment['slim.errors'] = fopen('../logs/app.log', 'a');
 
 // Prepare view
 $app->view(new \Slim\Views\Twig());
