@@ -12,5 +12,5 @@ logs/**/*
 phpunit.xml
 tmp/**/*
 
-!cache/README.md
 !logs/README.md
+!tmp/README.md
