@@ -18,6 +18,9 @@
         "slim/views": "0.1.*",
         "twig/twig": "1.*"
     },
+    "autoload": {
+        "psr-4": { "Trotch\\": "lib/" }
+    },
     "config": {
         "component-dir": "public/components",
         "component-baseurl": "/components"
