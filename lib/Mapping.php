@@ -30,7 +30,7 @@ class Mapping
         if (false === array_key_exists($city, $this->supportedCities)) {
             throw new \DomainException("Unknown city: $city");
         }
-        return $supportedCities[$city];
+        return $this->supportedCities[$city];
     }
 
     /**
