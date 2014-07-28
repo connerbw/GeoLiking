@@ -17,7 +17,8 @@
         "slim/slim": "2.*",
         "slim/views": "0.1.*",
         "twig/twig": "1.*",
-        "pimple/pimple": "~3.0"
+        "pimple/pimple": "~3.0",
+        "corbanb/freebird-php": "~0.2.2"
     },
     "autoload": {
         "psr-4": { "Trotch\\": "lib/" }
