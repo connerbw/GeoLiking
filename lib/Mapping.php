@@ -27,7 +27,7 @@ class Mapping
     function getCityPosition($city)
     {
         $city = strtolower($this->anglo($city));
-        if (false === array_key_exists($city, $this->$supportedCities)) {
+        if (false === array_key_exists($city, $this->supportedCities)) {
             throw new \DomainException("Unknown city: $city");
         }
         return $supportedCities[$city];
