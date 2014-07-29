@@ -42,16 +42,19 @@ class User
     function getPosition()
     {
         if (isset($_COOKIE['userPos'])) {
-            return json_decode($_COOKIE['userPos'], true);
+            $geo = json_decode($_COOKIE['userPos'], true);
+            if (is_array($geo) && isset($geo['latitude']) && isset($geo['longitude'])) {
+                return array((float) $geo['latitude'], (float) $geo['longitude']);
+            }
         }
 
         $geo = geoip_record_by_name($this->getIP());
         if (false !== $geo) {
-            return array($geo['latitude'], $geo['longitude']);
+            return array((float) $geo['latitude'], (float) $geo['longitude']);
         }
 
         $defaultCity = 'Montreal';
-        return array($this->mappingService->getCityPosition($defaultCity));
+        return $this->mappingService->getCityPosition($defaultCity);
     }
 
 

@@ -25,9 +25,13 @@ $app->view->parserOptions = array(
     'cache' => realpath('../tmp/templates'),
     'auto_reload' => true,
     'strict_variables' => false,
-    'autoescape' => true
+    'autoescape' => true,
+    'debug' => true,
 );
-$app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
+$app->view->parserExtensions = array(
+    new \Slim\Views\TwigExtension(),
+    new Twig_Extension_Debug(),
+);
 
 // Define routes
 $app->get(
@@ -36,7 +40,8 @@ $app->get(
         // Sample log message
         $app->log->info("Slim-Skeleton '/' route");
         // Render index view
-        $app->render('index.html');
+        $userPos = (new \Trotch\User(new \Trotch\Mapping()))->getPosition();
+        $app->render('index.html', ['userPos' => $userPos]);
     }
 );
 

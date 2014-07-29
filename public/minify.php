@@ -13,12 +13,19 @@ $options = [
             "{$r}/../templates/getCurrentPosition.js",
         ],
     ],
-    'maxAge' => 86400,
 ];
 
 // With the above, if you request http://example.org/minify.php/js, Apache
 // will set $_SERVER['PATH_INFO'] = '/js' and the sources in $options['groups']['js']
 // will be served.
 
+$options['groupsOnly'] = true;
+
+// check for URI versioning
+if (isset($_GET['v'])) {
+    $options['maxAge'] = 31536000;
+}
+
+ini_set('zlib.output_compression', '0');
 Minify::setCache(new Minify_Cache_File(realpath('../tmp'), true));
 Minify::serve('Groups', $options);
