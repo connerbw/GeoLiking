@@ -26,11 +26,9 @@ $app = new \Slim\Slim(array(
 $app->get(
     '/',
     function () use ($app) {
-        // Sample log message
-        $app->log->info("Slim-Skeleton '/' route");
         // Render index view
-        $userPos = (new \Trotch\User(new \Trotch\Mapping()))->getPosition();
-        $app->render('index.php', ['userPos' => $userPos]);
+        $lastKnownUserPos = (new \Trotch\User(new \Trotch\Mapping()))->getPosition();
+        $app->render('boilerplate.php', ['lastKnownUserPos' => $lastKnownUserPos]);
     }
 );
 

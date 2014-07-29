@@ -12,7 +12,7 @@ $d =& $this->data;
 </head>
 <body>
 <p>Hello world...</p>
-<?php print_r($d->get('userPos')) ?>
+<?php print_r($d->get('lastKnownUserPos')) ?>
 
 <script src="minify.php/js"></script>
 </body>

@@ -41,8 +41,8 @@ class User
      */
     function getPosition()
     {
-        if (isset($_COOKIE['userPos'])) {
-            $geo = json_decode($_COOKIE['userPos'], true);
+        if (isset($_COOKIE['lastKnownUserPos'])) {
+            $geo = json_decode($_COOKIE['lastKnownUserPos'], true);
             if (is_array($geo) && isset($geo['latitude']) && isset($geo['longitude'])) {
                 return array((float) $geo['latitude'], (float) $geo['longitude']);
             }

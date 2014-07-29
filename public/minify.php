@@ -5,10 +5,18 @@ require '../vendor/autoload.php';
 
 $options = [
     'groups' => [
-        'js' => [
-            "//components/jquery/jquery.min.js",
-            "//components/jquery-cookie/jquery.cookie.js",
-            "//js/getCurrentPosition.js",
+        'css' => [
+            '//components/foundation/css/normalize.css',
+            '//components/foundation/css/foundation.min.css',
+        ],
+        'js-head' => [
+            '//components/modernizr/modernizr.js',
+        ],
+        'js-body' => [
+            '//components/jquery/jquery.min.js',
+            '//components/foundation/js/foundation.min.js',
+            '//components/jquery-cookie/jquery.cookie.js',
+            '//js/getCurrentPosition.js',
         ],
     ],
 ];

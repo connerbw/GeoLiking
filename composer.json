@@ -8,10 +8,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "components/h5validate": "0.9.*",
+        "components/foundation": "5.3.*",
         "components/jquery": "1.11.*",
         "components/jquery-cookie": "1.4.*",
-        "components/jqueryui": "1.11.*",
         "jamend/selective-orm": "dev-master",
         "mrclay/minify": "2.2.*",
         "slim/slim": "2.*",
