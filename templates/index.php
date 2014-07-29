@@ -1,3 +1,9 @@
+<?php
+
+/** @var \Slim\Helper\Set $d */
+$d =& $this->data;
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +12,7 @@
 </head>
 <body>
 <p>Hello world...</p>
-{{ dump(userPos) }}
+<?php print_r($d->get('userPos')) ?>
 
 <script src="minify.php/js"></script>
 </body>

@@ -15,8 +15,6 @@
         "jamend/selective-orm": "dev-master",
         "mrclay/minify": "2.2.*",
         "slim/slim": "2.*",
-        "slim/views": "0.1.*",
-        "twig/twig": "1.*",
         "pimple/pimple": "~3.0",
         "corbanb/freebird-php": "~0.2.2"
     },
