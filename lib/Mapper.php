@@ -2,7 +2,7 @@
 
 namespace Trotch;
 
-class Mapping
+class Mapper
 {
     /**
      * @var array [city name, [latitude, longitude]]

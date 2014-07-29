@@ -6,16 +6,16 @@ class User
 {
 
     /**
-     * @var Mapping
+     * @var Mapper
      */
-    public $mappingService;
+    public $mapperService;
 
     /**
-     * @param Mapping $mappingService
+     * @param Mapper $mappingService
      */
     function __construct($mappingService)
     {
-        $this->mappingService = $mappingService;
+        $this->mapperService = $mappingService;
     }
 
     /**
@@ -54,7 +54,7 @@ class User
         }
 
         $defaultCity = 'Montreal';
-        return $this->mappingService->getCityPosition($defaultCity);
+        return $this->mapperService->getCityPosition($defaultCity);
     }
 
 

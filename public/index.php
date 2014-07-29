@@ -22,15 +22,35 @@ $app = new \Slim\Slim(array(
     'log.writer' => new \Slim\LogWriter(fopen('../logs/app.log', 'a')),
 ));
 
-// Define routes
+/* Initialize reusable objects */
+
+$mapper = new \Trotch\Mapper();
+$user = new \Trotch\User($mapper);
+
+/* Define routes */
+
 $app->get(
     '/',
-    function () use ($app) {
-        // Render index view
-        $lastKnownUserPos = (new \Trotch\User(new \Trotch\Mapping()))->getPosition();
-        $app->render('boilerplate.php', ['lastKnownUserPos' => $lastKnownUserPos]);
+    function () use ($app, $user) {
+        $app->render(
+            'boilerplate.php', [
+                'lastKnownUserPos' => $user->getPosition(),
+            ]
+        );
     }
 );
 
-// Run app
+$app->get(
+    '/map',
+    function () use ($app, $user) {
+        $app->render(
+            'map.php', [
+                'lastKnownUserPos' => $user->getPosition(),
+            ]
+        );
+    }
+);
+
+/* Run app */
+
 $app->run();
