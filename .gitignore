@@ -1,15 +1,13 @@
 .idea/
 /aux/
+/config/config.php
 /public/.htaccess
 /public/aux
 /public/components/**/*
 /vendor/
-autoload.php
 composer.lock
 composer.phar
-config.php
 logs/**/*
-phpunit.xml
 tmp/**/*
 
 !logs/README.md

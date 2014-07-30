@@ -15,7 +15,7 @@
         "mrclay/minify": "2.2.*",
         "slim/slim": "2.*",
         "pimple/pimple": "~3.0",
-        "corbanb/freebird-php": "~0.2.2"
+        "hybridauth/hybridauth": "2.2.*"
     },
     "autoload": {
         "psr-4": { "Trotch\\": "lib/" }

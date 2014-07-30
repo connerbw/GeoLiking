@@ -6,34 +6,37 @@ class User
 {
 
     /**
-     * @var Mapper
+     * @var Map
      */
-    public $mapperService;
+    protected $mapService;
 
     /**
-     * @param Mapper $mappingService
+     * @var array
      */
-    function __construct($mappingService)
+    protected $profile = array();
+
+    /**
+     * @param Map $mapService
+     */
+    function __construct($mapService)
     {
-        $this->mapperService = $mappingService;
+        $this->mapService = $mapService;
     }
 
     /**
-     * @return string
+     * @return array
      */
-    function getIP()
+    public function getProfile()
     {
-        foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key) {
-            if (array_key_exists($key, $_SERVER) === true) {
-                foreach (explode(',', $_SERVER[$key]) as $ip) {
-                    $ip = trim($ip);
-                    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false) {
-                        return $ip;
-                    }
-                }
-            }
-        }
-        return '127.0.0.1';
+        return $this->profile;
+    }
+
+    /**
+     * @param array $profile
+     */
+    public function setProfile($profile)
+    {
+        $this->profile = $profile;
     }
 
     /**
@@ -54,7 +57,25 @@ class User
         }
 
         $defaultCity = 'Montreal';
-        return $this->mapperService->getCityPosition($defaultCity);
+        return $this->mapService->getCityPosition($defaultCity);
+    }
+
+    /**
+     * @return string
+     */
+    function getIP()
+    {
+        foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key) {
+            if (array_key_exists($key, $_SERVER) === true) {
+                foreach (explode(',', $_SERVER[$key]) as $ip) {
+                    $ip = trim($ip);
+                    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false) {
+                        return $ip;
+                    }
+                }
+            }
+        }
+        return '127.0.0.1';
     }
 
 

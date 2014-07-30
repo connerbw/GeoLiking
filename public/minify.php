@@ -1,6 +1,6 @@
 <?php
 
-require '../config.php';
+require '../config/config.php';
 require '../vendor/autoload.php';
 
 $options = [
@@ -8,6 +8,7 @@ $options = [
         'css' => [
             '//components/foundation/css/normalize.css',
             '//components/foundation/css/foundation.min.css',
+            '//css/base.css',
         ],
         'js-head' => [
             '//components/modernizr/modernizr.js',
@@ -16,7 +17,7 @@ $options = [
             '//components/jquery/jquery.min.js',
             '//components/foundation/js/foundation.min.js',
             '//components/jquery-cookie/jquery.cookie.js',
-            '//js/getCurrentPosition.js',
+            '//js/getCurrentUserPosition.js',
         ],
     ],
 ];

@@ -29,9 +29,6 @@
     <div class="small-12 columns">
 </div>
 
-
-<!-- TESTING START -->
-
 <div class="row">
 
     <div class="small-12 large-8 columns">

@@ -1,6 +1,6 @@
 <?php
 
-require '../config.php';
+require '../config/config.php';
 require '../vendor/autoload.php';
 
 // Sessions
@@ -24,17 +24,22 @@ $app = new \Slim\Slim(array(
 
 /* Initialize reusable objects */
 
-$mapper = new \Trotch\Mapper();
-$user = new \Trotch\User($mapper);
+$c = new \Trotch\Container();
 
 /* Define routes */
 
 $app->get(
     '/',
-    function () use ($app, $user) {
+    function () use ($app, $c) {
+
+        $profile = $c::get('User')->getProfile();
+        if (empty($profile)) {
+            // Redirect to authenticate
+        }
+
         $app->render(
             'boilerplate.php', [
-                'lastKnownUserPos' => $user->getPosition(),
+                'lastKnownUserPos' => $c::get('User')->getPosition(),
             ]
         );
     }
@@ -42,14 +47,29 @@ $app->get(
 
 $app->get(
     '/map',
-    function () use ($app, $user) {
+    function () use ($app, $c) {
         $app->render(
             'map.php', [
-                'lastKnownUserPos' => $user->getPosition(),
+                'lastKnownUserPos' => $c::get('User')->getPosition(),
             ]
         );
     }
 );
+
+$app->get(
+    '/login',
+    function () use ($app, $c) {
+        $c::get('Auth')->authenticate('Twitter');
+    }
+);
+
+$app->any(
+    '/hybridauth',
+    function () {
+        include __DIR__ . '/../vendor/hybridauth/hybridauth/hybridauth/index.php';
+    }
+);
+
 
 /* Run app */
 
