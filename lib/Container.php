@@ -30,6 +30,15 @@ class Container
     {
         $c = new \Pimple\Container();
 
+        $c['App'] = function ($c) {
+            return new \Slim\Slim(array(
+                'mode' => 'development',
+                'templates.path' => __DIR__ . '/../templates',
+                'log.enabled' => true,
+                'log.writer' => new \Slim\LogWriter(fopen(__DIR__ . '/../logs/app.log', 'a')),
+            ));
+        };
+
         $c['Map'] = function ($c) {
             return new Map();
         };

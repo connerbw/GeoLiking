@@ -14,19 +14,14 @@ mb_internal_encoding('UTF-8');
 mb_regex_encoding('UTF-8');
 mb_language('uni');
 
-// Prepare app
-$app = new \Slim\Slim(array(
-    'mode' => 'development',
-    'templates.path' => '../templates',
-    'log.enabled' => true,
-    'log.writer' => new \Slim\LogWriter(fopen('../logs/app.log', 'a')),
-));
 
 /* Initialize reusable objects */
 
 $c = new \Trotch\Container();
 
 /* Define routes */
+
+$app = $c::get('App');
 
 $app->get(
     '/',

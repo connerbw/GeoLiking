@@ -8,9 +8,11 @@ namespace PHPSTORM_META {
     /** @noinspection PhpIllegalArrayKeyTypeInspection */
     $STATIC_METHOD_TYPES = [
         \Trotch\Container::get('') => [
+            'App' instanceof \Slim\Slim,
+            'Auth' instanceof \Trotch\Auth,
+            'Log' instanceof \Slim\LogWriter,
             'Map' instanceof \Trotch\Map,
             'User' instanceof \Trotch\User,
-            'Auth' instanceof \Trotch\Auth,
         ]
     ];
 
