@@ -18,8 +18,8 @@ class Container
      */
     public function __construct()
     {
-        if (!self::$instance) {
-            self::init();
+        if (!static::$instance) {
+            static::init();
         }
     }
 
@@ -51,7 +51,7 @@ class Container
             return new Auth($c['User']);
         };
 
-        self::$instance = $c;
+        static::$instance = $c;
     }
 
 
@@ -61,11 +61,11 @@ class Container
      */
     static function get($var)
     {
-        if (!self::$instance) {
-            self::init();
+        if (!static::$instance) {
+            static::init();
         }
 
-        return self::$instance[$var];
+        return static::$instance[$var];
     }
 
     /**
@@ -73,11 +73,11 @@ class Container
      */
     static function getInstance()
     {
-        if (!self::$instance) {
-            self::init();
+        if (!static::$instance) {
+            static::init();
         }
 
-        return self::$instance;
+        return static::$instance;
     }
 
 }
