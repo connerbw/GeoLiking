@@ -51,13 +51,12 @@ class User
             }
         }
 
-        $geo = geoip_record_by_name($this->getIP());
-        if (false !== $geo) {
-            return array((float) $geo['latitude'], (float) $geo['longitude']);
+        try {
+            return $this->mapService->getIpPosition($this->getIP());
+        } catch (\UnexpectedValueException $e) {
+            $defaultCity = 'Montreal';
+            return $this->mapService->getCityPosition($defaultCity);
         }
-
-        $defaultCity = 'Montreal';
-        return $this->mapService->getCityPosition($defaultCity);
     }
 
     /**

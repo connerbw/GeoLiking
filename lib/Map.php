@@ -21,7 +21,7 @@ class Map
 
     /**
      * @param string $city
-     * @return array
+     * @return array [latitude, longitude]
      * @throws \DomainException
      */
     function getCityPosition($city)
@@ -31,6 +31,20 @@ class Map
             throw new \DomainException("Unknown city: $city");
         }
         return $this->supportedCities[$city];
+    }
+
+    /**
+     * @param string $ip
+     * @return array [latitude, longitude]
+     * @throws \UnexpectedValueException
+     */
+    function getIpPosition($ip)
+    {
+        $geo = geoip_record_by_name($ip);
+        if (false === $geo) {
+            throw new \UnexpectedValueException("Cannot find position for IP: $ip");
+        }
+        return array((float) $geo['latitude'], (float) $geo['longitude']);
     }
 
     /**
