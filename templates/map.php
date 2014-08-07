@@ -25,19 +25,14 @@
     <script type="text/javascript">
         function initialize() {
 
-            var locations = [
-                ['Bondi Beach', -33.890542, 151.274856, 4],
-                ['Coogee Beach', -33.923036, 151.259052, 5],
-                ['Cronulla Beach', -34.028249, 151.157507, 3],
-                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-                ['Maroubra Beach', -33.950198, 151.259302, 1]
-            ];
+            var locations = <?php echo json_encode($this->get('locations')); ?>
 
             var mapOptions = {
                 zoom: 10,
                 disableDefaultUI: true,
                 scrollwheel: false,
                 disableDoubleClickZoom: true,
+                // TODO Get data from lastKnownUserPos but! fallback to sane center if user is too far away
                 center: new google.maps.LatLng(-33.92, 151.25),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };

@@ -10,6 +10,7 @@ namespace PHPSTORM_META {
         \Trotch\Container::get('') => [
             'App' instanceof \Slim\Slim,
             'Auth' instanceof \Trotch\Auth,
+            'Db' instanceof \selective\ORM\Database,
             'Log' instanceof \Slim\LogWriter,
             'Map' instanceof \Trotch\Map,
             'User' instanceof \Trotch\User,

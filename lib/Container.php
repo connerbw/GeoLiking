@@ -39,6 +39,16 @@ class Container
             ));
         };
 
+        $c['Db'] = function ($c) {
+            global $CONFIG;
+            return new \selective\ORM\Database(
+                $CONFIG['DB_NAME'],
+                $CONFIG['DB_DRIVER'],
+                $CONFIG['DB_PARAMETERS'],
+                isset($CONFIG['DB_CLASSMAPPER']) ? $CONFIG['DB_CLASSMAPPER'] : array()
+            );
+        };
+
         $c['Map'] = function ($c) {
             return new Map();
         };

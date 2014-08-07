@@ -43,8 +43,15 @@ $app->get(
 $app->get(
     '/map',
     function () use ($app, $c) {
+
+        $locations = array();
+        foreach ($c::get('Db')->getTable('bars') as $bar) {
+            $locations[] = [$bar->name, $bar->latitude, $bar->longitude];
+        }
+
         $app->render(
             'map.php', [
+                'locations' => $locations,
                 'lastKnownUserPos' => $c::get('User')->getPosition(),
             ]
         );

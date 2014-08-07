@@ -37,5 +37,5 @@ if (isset($_GET['v'])) {
 }
 
 ini_set('zlib.output_compression', '0');
-Minify::setCache(new Minify_Cache_File(realpath('../tmp'), true));
+Minify::setCache(new Minify_Cache_File(realpath(__DIR__ . '/../tmp'), true));
 Minify::serve('Groups', $options);

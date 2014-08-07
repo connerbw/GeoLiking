@@ -1,9 +1,14 @@
 <?php
 
+global $CONFIG;
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(-1);
 
+$CONFIG['DB_NAME'] = 'trotch';
+$CONFIG['DB_DRIVER'] = 'MySQL';
+$CONFIG['DB_PARAMETERS'] = ['host' => 'localhost', 'username' => 'root', 'password' => 'root'];
 
 /**
  * @see http://hybridauth.sourceforge.net/userguide/Configuration.html
