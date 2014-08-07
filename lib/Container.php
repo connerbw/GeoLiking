@@ -14,12 +14,12 @@ class Container
     protected static $instance;
 
     /**
-     *
+     * @param \Pimple\Container $c (optional)
      */
-    public function __construct()
+    public function __construct($c = null)
     {
-        if (!static::$instance) {
-            static::init();
+        if ($c) {
+            static::$instance = $c;
         }
     }
 
@@ -28,42 +28,8 @@ class Container
      */
     static function init()
     {
-        $c = new \Pimple\Container();
-
-        $c['App'] = function ($c) {
-            return new \Slim\Slim(array(
-                'mode' => 'development',
-                'templates.path' => __DIR__ . '/../templates',
-                'log.enabled' => true,
-                'log.writer' => new \Slim\LogWriter(fopen(__DIR__ . '/../logs/app.log', 'a')),
-            ));
-        };
-
-        $c['Db'] = function ($c) {
-            global $CONFIG;
-            return new \selective\ORM\Database(
-                $CONFIG['DB_NAME'],
-                $CONFIG['DB_DRIVER'],
-                $CONFIG['DB_PARAMETERS'],
-                isset($CONFIG['DB_CLASSMAPPER']) ? $CONFIG['DB_CLASSMAPPER'] : array()
-            );
-        };
-
-        $c['Map'] = function ($c) {
-            return new Map();
-        };
-
-        $c['User'] = function ($c) {
-            return new User($c['Map']);
-        };
-
-        $c['Auth'] = function ($c) {
-            return new Auth($c['User']);
-        };
-
-        static::$instance = $c;
+        static::$instance = require(__DIR__ . '/../config/services.php');
     }
-
 
     /**
      * @param string $var
