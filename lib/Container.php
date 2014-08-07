@@ -3,32 +3,44 @@
 namespace Trotch;
 
 /**
+ * Singleton (Boooo!)
+ *
  * Cheap factory style wrapper around \Pimple\Container() so that we can use
- * PhpStorm IDE to auto complete things.
+ * PhpStorm IDE to auto-complete things.
  */
 class Container
 {
+
     /**
-     * @var \Pimple\Container
+     * @var \Trotch\Container
      */
     protected static $instance;
 
     /**
-     * @param \Pimple\Container $c (optional)
+     * @var \Pimple\Container
      */
-    public function __construct($c = null)
+    protected static $pimple;
+
+    /**
+     * Thou shalt not construct that which is unconstructable!
+     */
+    final private function __construct()
     {
-        if ($c) {
-            static::$instance = $c;
-        }
+    }
+
+    /**
+     * Me not like clones! Me smash clones!
+     */
+    final private function __clone()
+    {
     }
 
     /**
      * If you add stuff here, don't forget to also edit config/.phpstorm.meta.php
      */
-    static function init()
+    protected static function init()
     {
-        static::$instance = require(__DIR__ . '/../config/services.php');
+        static::$pimple = require(__DIR__ . '/../config/services.php');
     }
 
     /**
@@ -37,23 +49,43 @@ class Container
      */
     static function get($var)
     {
-        if (!static::$instance) {
+        if (!static::$pimple) {
             static::init();
         }
 
-        return static::$instance[$var];
+        return static::$pimple[$var];
+    }
+
+
+    /**
+     * @return Container
+     */
+    public static function getInstance()
+    {
+        if (!static::$instance) {
+            static::$instance = new static;
+        }
+        return static::$instance;
     }
 
     /**
      * @return \Pimple\Container
      */
-    static function getInstance()
+    static function getPimple()
     {
-        if (!static::$instance) {
+        if (!static::$pimple) {
             static::init();
         }
 
-        return static::$instance;
+        return static::$pimple;
+    }
+
+    /**
+     * @param \Pimple\Container $pimple
+     */
+    public static function setPimple($pimple)
+    {
+        self::$pimple = $pimple;
     }
 
 }

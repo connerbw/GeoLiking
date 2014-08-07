@@ -15,9 +15,9 @@ mb_regex_encoding('UTF-8');
 mb_language('uni');
 
 
-/* Initialize reusable objects */
+/* Initialize services */
 
-$c = new \Trotch\Container();
+$c = \Trotch\Container::getInstance();
 
 /* Define routes */
 
@@ -26,35 +26,16 @@ $app = $c::get('App');
 $app->get(
     '/',
     function () use ($app, $c) {
-
-        $profile = $c::get('User')->getProfile();
-        if (empty($profile)) {
-            // Redirect to authenticate
-        }
-
-        $app->render(
-            'boilerplate.php', [
-                'lastKnownUserPos' => $c::get('User')->getPosition(),
-            ]
-        );
+        $r = new \Trotch\Renderer\Home($app, $c);
+        $r->render();
     }
 );
 
 $app->get(
     '/map',
     function () use ($app, $c) {
-
-        $locations = array();
-        foreach ($c::get('Db')->getTable('bars') as $bar) {
-            $locations[] = [$bar->name, $bar->latitude, $bar->longitude];
-        }
-
-        $app->render(
-            'map.php', [
-                'locations' => $locations,
-                'lastKnownUserPos' => $c::get('User')->getPosition(),
-            ]
-        );
+        $r = new \Trotch\Renderer\Map($app, $c);
+        $r->render();
     }
 );
 
