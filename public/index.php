@@ -26,7 +26,7 @@ $app = $c::get('App');
 $app->get(
     '/',
     function () use ($app, $c) {
-        $r = new \Trotch\Renderer\Home($app, $c);
+        $r = new \Trotch\Renderer\Home();
         $r->render();
     }
 );
@@ -34,7 +34,7 @@ $app->get(
 $app->get(
     '/map',
     function () use ($app, $c) {
-        $r = new \Trotch\Renderer\Map($app, $c);
+        $r = new \Trotch\Renderer\Map();
         $r->render();
     }
 );

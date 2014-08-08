@@ -25,7 +25,7 @@ $c['Db'] = function ($c) {
 };
 
 $c['Map'] = function ($c) {
-    return new \Trotch\Map();
+    return new \Trotch\Map($c['Db']);
 };
 
 $c['User'] = function ($c) {

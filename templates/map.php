@@ -8,32 +8,36 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <style type="text/css">
         html {
-            height: 100%
+            height: 100%;
         }
 
         body {
             height: 100%;
             margin: 0;
-            padding: 0
+            padding: 0;
         }
 
         #map-canvas {
-            height: 100%
+            height: 100%;
         }
     </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">
         function initialize() {
 
-            var locations = <?php echo json_encode($this->get('locations')); ?>
+            var locations = <?php echo json_encode($locations); ?>
 
             var mapOptions = {
-                zoom: 10,
+                zoom: 12,
                 disableDefaultUI: true,
                 scrollwheel: false,
                 disableDoubleClickZoom: true,
-                // TODO Get data from lastKnownUserPos but! fallback to sane center if user is too far away
-                center: new google.maps.LatLng(-33.92, 151.25),
+                zoomControl: true,
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.TOP_RIGHT,
+                    style: google.maps.ZoomControlStyle.SMALL
+                },
+                center: new google.maps.LatLng(<?php echo "$userLat, $userLon"; ?>),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
 

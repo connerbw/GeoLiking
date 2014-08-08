@@ -6,16 +6,6 @@ abstract class Renderer
 {
 
     /**
-     * @var \Slim\Slim $appService
-     */
-    protected $appService;
-
-    /**
-     * @var \Trotch\Container $container
-     */
-    protected $container;
-
-    /**
      * @var string
      */
     protected $template;
@@ -26,22 +16,12 @@ abstract class Renderer
     protected $status;
 
     /**
-     * @param \Slim\Slim $appService
-     * @param \Trotch\Container $container
-     */
-    function __construct($appService, $container)
-    {
-        $this->appService = $appService;
-        $this->container = $container;
-    }
-
-    /**
      *
      */
     final function render()
     {
         $this->pre();
-        $this->appService->render($this->template, $this->data($this->appService, $this->container), $this->status);
+        Container::get('App')->render($this->template, $this->data(), $this->status);
         $this->post();
     }
 

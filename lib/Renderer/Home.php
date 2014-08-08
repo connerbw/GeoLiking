@@ -2,6 +2,7 @@
 
 namespace Trotch\Renderer;
 
+use Trotch\Container;
 use Trotch\Renderer;
 
 class Home extends Renderer
@@ -26,10 +27,8 @@ class Home extends Renderer
      */
     protected function data()
     {
-        $c = $this->container;
-
         return [
-            'lastKnownUserPos' => $c::get('User')->getPosition(),
+            'lastKnownUserPos' => Container::get('User')->getPosition(),
         ];
     }
 

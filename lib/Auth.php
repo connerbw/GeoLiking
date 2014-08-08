@@ -19,7 +19,7 @@ class Auth
     }
 
     /**
-     *
+     * @return bool
      */
     function isAuthenticated()
     {

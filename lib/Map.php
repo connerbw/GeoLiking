@@ -8,8 +8,21 @@ class Map
      * @var array [city name, [latitude, longitude]]
      */
     protected $supportedCities = array(
-        'montreal' => [45.5000, 73.5667],
+        'montreal' => [45.5000, -73.5667],
     );
+
+    /**
+     * @var \selective\ORM\Database
+     */
+    protected $dbService;
+
+    /**
+     * @param \selective\ORM\Database $dbService
+     */
+    function __construct($dbService)
+    {
+        $this->dbService = $dbService;
+    }
 
     /**
      * @return array
@@ -65,8 +78,7 @@ class Map
 
         if ('km' == strtolower($unit)) {
             return ($miles * 1.609344);
-        }
-        else {
+        } else {
             return $miles;
         }
     }
@@ -88,4 +100,56 @@ class Map
 
         return array($lat3, $lon3);
     }
+
+
+    /**
+     * Haversine formula
+     *
+     * @param $lat
+     * @param $lon
+     * @param int $limit
+     * @param int $distance
+     * @param string $unit
+     * @return array (of objects)
+     */
+    function getClosestBars($lat, $lon, $limit = 500, $distance = 0, $unit = 'km')
+    {
+        if ('km' == strtolower($unit)) {
+            $x = 6371;
+        } else {
+            $x = 3959; // Miles
+        }
+
+        //
+        $sql = "SELECT *, ";
+        $sql .= "({$x} * acos (
+            cos ( radians({$lat}) )
+            * cos( radians( latitude ) )
+            * cos( radians( longitude ) - radians({$lon}) )
+            + sin ( radians({$lat}) )
+            * sin( radians( latitude ) )
+        )) AS distance ";
+        $sql .= "FROM bars ";
+        if ($distance) {
+            $sql .= "HAVING distance < {$distance} ";
+        }
+        $sql .= "ORDER BY distance ";
+        $sql .= "LIMIT {$limit} ";
+
+        $records = $this->dbService->bars->sql($sql);
+
+        $results = [];
+        foreach ($records as $r) {
+            $results[$r->id] = (object) [
+                'name' => $r->name,
+                'latitude'  => $r->latitude,
+                'longitude' => $r->longitude,
+                'distance' => $r->distance,
+            ];
+        }
+
+        return $results;
+    }
+
+
 }

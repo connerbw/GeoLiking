@@ -2,6 +2,7 @@
 
 namespace Trotch\Renderer;
 
+use Trotch\Container;
 use Trotch\Renderer;
 
 class Map extends Renderer
@@ -25,18 +26,17 @@ class Map extends Renderer
      */
     protected function data()
     {
-        $c = $this->container;
+        list($userLat, $userLon) = Container::get('User')->getPosition();
 
         $locations = array();
-        foreach ($c::get('Db')->getTable('bars') as $bar) {
+        foreach (Container::get('Map')->getClosestBars($userLat, $userLon) as $bar) {
             $locations[] = [$bar->name, $bar->latitude, $bar->longitude];
         }
 
-        $lastKnownUserPos = $c::get('User')->getPosition();
-
         return [
             'locations' => $locations,
-            'lastKnownUserPos' => $lastKnownUserPos,
+            'userLat' => $userLat,
+            'userLon' => $userLon,
         ];
     }
 

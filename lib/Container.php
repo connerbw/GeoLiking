@@ -17,7 +17,7 @@ class Container
     /**
      * If you add stuff here, don't forget to also edit config/.phpstorm.meta.php
      */
-    protected static function init()
+    static function init()
     {
         static::$pimple = require(__DIR__ . '/../config/services.php');
     }
@@ -35,6 +35,25 @@ class Container
         return static::$pimple[$var];
     }
 
+    /**
+     * @param string $key
+     * @param mixed $val
+     * @param string $type (optional)
+     */
+    static function set($key, $val, $type = null)
+    {
+        if (!static::$pimple) {
+            static::init();
+        }
+
+        if ('factory' == $type) {
+            static::$pimple[$key] = static::$pimple->factory($val);
+        } elseif ('protect' == $type) {
+            static::$pimple[$key] = static::$pimple->protect($val);
+        } else {
+            static::$pimple[$key] = $val;
+        }
+    }
 
     /**
      * @return \Pimple\Container

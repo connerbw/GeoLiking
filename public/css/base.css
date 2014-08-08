@@ -2,3 +2,7 @@
     width: 100%;
     max-width: 100%;
 }
+
+section.main-section {
+    padding-right: 12px;
+}

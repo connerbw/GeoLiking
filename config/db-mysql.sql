@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS `bars` (
   `id`        INT(11)         NOT NULL AUTO_INCREMENT,
   `name`      VARCHAR(255)    NOT NULL,
-  `latitude`  DECIMAL(19, 16) NOT NULL,
-  `longitude` DECIMAL(19, 16) NOT NULL,
+  `latitude`  DECIMAL(11, 8) NOT NULL,
+  `longitude` DECIMAL(11, 8) NOT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE =InnoDB
