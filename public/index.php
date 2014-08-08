@@ -17,7 +17,7 @@ mb_language('uni');
 
 /* Initialize services */
 
-$c = \Trotch\Container::getInstance();
+$c = new \Trotch\Container();
 
 /* Define routes */
 
