@@ -10,7 +10,7 @@ class Home extends Renderer
     /**
      * @var string
      */
-    protected $template = 'boilerplate.php';
+    protected $template = 'home.php';
 
 
     /**
