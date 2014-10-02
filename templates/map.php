@@ -25,7 +25,7 @@
     <script type="text/javascript">
         function initialize() {
 
-            var locations = <?php echo json_encode($locations); ?>
+            var locations = <?php echo json_encode($locations); ?>;
 
             var mapOptions = {
                 zoom: 12,
