@@ -1,25 +1,11 @@
 <?php
 
-require '../config/config.php';
-require '../vendor/autoload.php';
-
-// Sessions
-ini_set('session.use_only_cookies', true);
-session_cache_limiter(false);
-session_start();
-
-// Set utf-8
-header('Content-Type: text/html;charset=utf-8');
-mb_internal_encoding('UTF-8');
-mb_regex_encoding('UTF-8');
-mb_language('uni');
-
-
-/* Initialize services */
-
-$c = new \Trotch\Container();
+require(__DIR__ . '/../config/config.php');
+require(__DIR__ . '/initialize.php');
 
 /* Define routes */
+
+$c = new \Trotch\Container();
 
 $app = $c::get('App');
 

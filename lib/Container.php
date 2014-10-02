@@ -15,11 +15,17 @@ class Container
     protected static $pimple;
 
     /**
-     * If you add stuff here, don't forget to also edit config/.phpstorm.meta.php
+     * If you add services, don't forget to also edit config/.phpstorm.meta.php
+     *
+     * @param \Pimple\Container $pimple
      */
-    static function init()
+    static function init($pimple = null)
     {
-        static::$pimple = require(__DIR__ . '/../config/services.php');
+        if (null === $pimple) {
+            static::$pimple = require(__DIR__ . '/../config/services.php');
+        } else {
+            static::$pimple = $pimple;
+        }
     }
 
     /**
@@ -29,7 +35,7 @@ class Container
     static function get($var)
     {
         if (!static::$pimple) {
-            static::init();
+            throw new \LogicException('\Pimple\Container not set, call init() or setPimple() before using get().');
         }
 
         return static::$pimple[$var];
@@ -43,7 +49,7 @@ class Container
     static function set($key, $val, $type = null)
     {
         if (!static::$pimple) {
-            static::init();
+            throw new \LogicException('\Pimple\Container not set, call init() or setPimple() before using set().');
         }
 
         if ('factory' == $type) {
@@ -61,7 +67,7 @@ class Container
     static function getPimple()
     {
         if (!static::$pimple) {
-            static::init();
+            throw new \LogicException('\Pimple\Container not set, call init() or setPimple() before using getPimple().');
         }
 
         return static::$pimple;

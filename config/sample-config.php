@@ -27,3 +27,9 @@ $CONFIG['HYBRIDAUTH'] = array(
         ],
     ],
 );
+
+/**
+ * Set this variable to an instance of \Pimple\Container if you want to override config/services.php
+ * Useful for Unit Testing, etc.
+ */
+// $CONFIG['PIMPLE'] = '';
