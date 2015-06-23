@@ -5,11 +5,11 @@
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
         };
-        $.cookie('lastKnownUserPos', JSON.stringify(pos), { expires: 1, path: '/' });
+        $.cookie('geoLikePos', JSON.stringify(pos), { expires: 1, path: '/' });
     }
 
     function error(error) {
-        $.removeCookie('lastKnownUserPos', { path: '/' });
+        $.removeCookie('geoLikePos', { path: '/' });
         console.warn('ERROR(' + error.code + '): ' + error.message);
     }
 

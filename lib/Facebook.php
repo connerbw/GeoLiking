@@ -38,7 +38,7 @@ class Facebook
     /**
      * Writes "I liked LAT, LNG" to user's Facebook time line
      */
-    function setUserStatus()
+    function postGeoLikeToWall()
     {
         list($lat, $lng) = $this->geo->getPosition();
         $adapter = $this->authenticate();

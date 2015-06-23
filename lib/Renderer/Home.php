@@ -31,7 +31,7 @@ class Home extends Renderer
         // Geo Location
         list($lat, $lng) = Container::get('GeoLocation')->getPosition();
 
-        // Warnings
+        // Warning
         $warning = isset($_SESSION['geoLikingWarning']) ? $_SESSION['geoLikingWarning'] : null;
         unset($_SESSION['geoLikingWarning']);
 
@@ -40,10 +40,10 @@ class Home extends Renderer
         unset($_SESSION['geoLikingSuccess']);
 
         // Accurate
-        $accurate = isset($_COOKIE['lastKnownUserPos']) ? true : false;
+        $accurate = isset($_COOKIE['geoLikePos']) ? true : false;
 
         // Token
-        $_SESSION['token'] = md5(uniqid(rand(), true));
+        $_SESSION['geoLikingToken'] = md5(uniqid(rand(), true));
 
         return [
             'lat' => $lat,
@@ -51,7 +51,7 @@ class Home extends Renderer
             'warning' => $warning,
             'success' => $success,
             'accurate' => $accurate,
-            'token' => $_SESSION['token'],
+            'token' => $_SESSION['geoLikingToken'],
         ];
     }
 

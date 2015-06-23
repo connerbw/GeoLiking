@@ -19,10 +19,10 @@ class GeoLike extends Renderer
      */
     protected function pre()
     {
-        if (isset($_GET['token']) && isset($_SESSION['token']) && $_GET['token'] == $_SESSION['token']) {
+        if (isset($_GET['token']) && isset($_SESSION['geoLikingToken']) && $_GET['token'] == $_SESSION['geoLikingToken']) {
             try {
                 $fb = Container::get('Facebook');
-                $fb->setUserStatus();
+                $fb->postGeoLikeToWall();
                 $_SESSION['geoLikingSuccess'] = true;
             }
             catch (\Exception $e) {
