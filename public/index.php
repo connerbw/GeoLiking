@@ -33,6 +33,14 @@ $app->get(
     }
 );
 
+$app->get(
+    '/privacy',
+    function () use ($app, $c) {
+        $r = new \Trotch\Renderer\Privacy();
+        $r->render();
+    }
+);
+
 $app->any(
     '/hybridauth',
     function () {
