@@ -1,4 +1,4 @@
-Trotch
+Geo Liking
 ======
 
 _We guarantee results marginally better than random™_
