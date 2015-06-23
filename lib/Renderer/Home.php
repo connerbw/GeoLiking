@@ -35,6 +35,10 @@ class Home extends Renderer
         $warning = isset($_SESSION['geoLikingWarning']) ? $_SESSION['geoLikingWarning'] : null;
         unset($_SESSION['geoLikingWarning']);
 
+        // Success
+        $success = isset($_SESSION['geoLikingSuccess']) ? true : false;
+        unset($_SESSION['geoLikingSuccess']);
+
         // Accurate
         $accurate = isset($_COOKIE['lastKnownUserPos']) ? true : false;
 
@@ -45,6 +49,7 @@ class Home extends Renderer
             'lat' => $lat,
             'lng' => $lng,
             'warning' => $warning,
+            'success' => $success,
             'accurate' => $accurate,
             'token' => $_SESSION['token'],
         ];

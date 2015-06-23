@@ -23,6 +23,7 @@ class GeoLike extends Renderer
             try {
                 $fb = Container::get('Facebook');
                 $fb->setUserStatus();
+                $_SESSION['geoLikingSuccess'] = true;
             }
             catch (\Exception $e) {
                 $_SESSION['geoLikingWarning'] = $e->getMessage();
@@ -49,6 +50,7 @@ class GeoLike extends Renderer
     protected function post()
     {
         unset($_SESSION['token']);
-        Container::get('App')->redirect('/');
+        $app = Container::get('App');
+        $app->redirect($app->request()->getRootUri());
     }
 }

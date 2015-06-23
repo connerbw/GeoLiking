@@ -3,6 +3,10 @@ Trotch
 
 _We guarantee results marginally better than random™_
 
+This is the source code that runs [GeoLiking.com](http://geoliking.com)
+
+Illustrations by [Shie Kasai](http://www.shiekasai.com)
+
 ### INSTALL ###
 
  1. `./composer.phar install`
