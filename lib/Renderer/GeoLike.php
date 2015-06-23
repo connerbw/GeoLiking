@@ -51,6 +51,6 @@ class GeoLike extends Renderer
     {
         unset($_SESSION['token']);
         $app = Container::get('App');
-        $app->redirect($app->request()->getRootUri());
+        $app->redirect('/');
     }
 }
