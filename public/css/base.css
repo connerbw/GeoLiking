@@ -1,12 +1,8 @@
-.tooltip {
-    margin-left: 0.5em;
-}
-
-.likeText {
-
+.has-tip, .has-tip:hover {
+    border-bottom: none;
 }
 
 .likeButton {
     width: 50px;
-    vertical-align: middle  ;
+    vertical-align: middle;
 }
