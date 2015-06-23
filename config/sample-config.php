@@ -8,22 +8,21 @@ error_reporting(-1);
 
 $CONFIG['MODE'] = 'development';
 
-$CONFIG['DB_NAME'] = 'trotch';
-$CONFIG['DB_DRIVER'] = 'MySQL';
-$CONFIG['DB_PARAMETERS'] = ['host' => 'localhost', 'username' => 'root', 'password' => 'root'];
-
 /**
  * @see http://hybridauth.sourceforge.net/userguide/Configuration.html
  */
 $CONFIG['HYBRIDAUTH'] = array(
-    'base_url' => 'http://localhost/trotch/hybridauth', // No trailing slash!
+    'base_url' => 'http://geoliking.dev/hybridauth', // No trailing slash!
+    'debug_mode' => true,
+    'debug_file' => '/vagrant/logs/hybridauth.log',
     'providers' => [
-        'Twitter' => [
+        'Facebook' => [
             'enabled' => true,
             'keys' => [
-                'key' => '__REPLACE_ME__',
+                'id' => '__REPLACE_ME__',
                 'secret' => '__REPLACE_ME__'
-            ]
+            ],
+            'scope'   => 'publish_actions',
         ],
     ],
 );

@@ -1,8 +1,12 @@
-.row.full-width {
-    width: 100%;
-    max-width: 100%;
+.tooltip {
+    margin-left: 0.5em;
 }
 
-section.main-section {
-    padding-right: 12px;
+.likeText {
+
+}
+
+.likeButton {
+    width: 50px;
+    vertical-align: middle  ;
 }

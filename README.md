@@ -7,8 +7,6 @@ _We guarantee results marginally better than random™_
 
  1. `./composer.phar install`
 
- 2. Import `./config/sql/db-mysql.sql` into MySQL (todo)
-
  3. `chmod 777 ./logs`
     `chmod 777 ./tmp`
 

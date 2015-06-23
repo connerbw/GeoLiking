@@ -18,6 +18,7 @@ $options = [
             '//components/foundation/js/foundation.min.js',
             '//components/jquery-cookie/jquery.cookie.js',
             '//js/getCurrentUserPosition.js',
+            '//js/FacebookSdk.js',
         ],
     ],
 ];

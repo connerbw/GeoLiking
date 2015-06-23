@@ -13,6 +13,7 @@ class Map extends Renderer
      */
     protected $template = 'map.php';
 
+
     /**
      *
      */
@@ -21,24 +22,20 @@ class Map extends Renderer
         // TODO: Implement pre() method.
     }
 
+
     /**
      * @return array
      */
     protected function data()
     {
-        list($userLat, $userLon) = Container::get('User')->getPosition();
-
-        $locations = array();
-        foreach (Container::get('Map')->getClosestBars($userLat, $userLon) as $bar) {
-            $locations[] = [$bar->name, $bar->latitude, $bar->longitude];
-        }
+        list($lat, $lng) = Container::get('GeoLocation')->getPosition();
 
         return [
-            'locations' => $locations,
-            'userLat' => $userLat,
-            'userLon' => $userLon,
+            'lat' => $lat,
+            'lng' => $lng,
         ];
     }
+
 
     /**
      *

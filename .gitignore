@@ -9,6 +9,9 @@ composer.lock
 composer.phar
 logs/**/*
 tmp/**/*
+.vagrant/
+Vagrantfile
+/public/adminer-*
 
 !logs/README.md
 !tmp/README.md

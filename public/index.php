@@ -26,9 +26,10 @@ $app->get(
 );
 
 $app->get(
-    '/login',
+    '/geolike',
     function () use ($app, $c) {
-        $c::get('Auth')->authenticate('Twitter');
+        $r = new \Trotch\Renderer\GeoLike();
+        $r->render();
     }
 );
 

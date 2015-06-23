@@ -6,6 +6,7 @@ $c = new \Pimple\Container();
 
 $c['App'] = function ($c) {
     global $CONFIG;
+
     return new \Slim\Slim(array(
         'mode' => $CONFIG['MODE'],
         'templates.path' => __DIR__ . '/../templates',
@@ -14,26 +15,12 @@ $c['App'] = function ($c) {
     ));
 };
 
-$c['Db'] = function ($c) {
-    global $CONFIG;
-    return new \selective\ORM\Database(
-        $CONFIG['DB_NAME'],
-        $CONFIG['DB_DRIVER'],
-        $CONFIG['DB_PARAMETERS'],
-        isset($CONFIG['DB_CLASSMAPPER']) ? $CONFIG['DB_CLASSMAPPER'] : array()
-    );
+$c['GeoLocation'] = function () {
+    return new \Trotch\GeoLocation();
 };
 
-$c['Map'] = function ($c) {
-    return new \Trotch\Map($c['Db']);
-};
-
-$c['User'] = function ($c) {
-    return new \Trotch\User($c['Map']);
-};
-
-$c['Auth'] = function ($c) {
-    return new \Trotch\Auth($c['User']);
+$c['Facebook'] = function ($c) {
+    return new \Trotch\Facebook($c['GeoLocation']);
 };
 
 return $c;

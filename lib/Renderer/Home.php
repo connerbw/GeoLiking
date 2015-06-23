@@ -22,15 +22,34 @@ class Home extends Renderer
         // TODO: Implement pre() method.
     }
 
+
     /**
      * @return array
      */
     protected function data()
     {
+        // Geo Location
+        list($lat, $lng) = Container::get('GeoLocation')->getPosition();
+
+        // Warnings
+        $warning = isset($_SESSION['geoLikingWarning']) ? $_SESSION['geoLikingWarning'] : null;
+        unset($_SESSION['geoLikingWarning']);
+
+        // Accurate
+        $accurate = isset($_COOKIE['lastKnownUserPos']) ? true : false;
+
+        // Token
+        $_SESSION['token'] = md5(uniqid(rand(), true));
+
         return [
-            'lastKnownUserPos' => Container::get('User')->getPosition(),
+            'lat' => $lat,
+            'lng' => $lng,
+            'warning' => $warning,
+            'accurate' => $accurate,
+            'token' => $_SESSION['token'],
         ];
     }
+
 
     /**
      *
@@ -39,4 +58,5 @@ class Home extends Renderer
     {
         // TODO: Implement post() method.
     }
+
 }

@@ -9,11 +9,9 @@ namespace PHPSTORM_META {
     $STATIC_METHOD_TYPES = [
         \Trotch\Container::get('') => [
             'App' instanceof \Slim\Slim,
-            'Auth' instanceof \Trotch\Auth,
-            'Db' instanceof \selective\ORM\Database,
+            'GeoLocation' instanceof \Trotch\GeoLocation,
+            'Facebook' instanceof \Trotch\Facebook,
             'Log' instanceof \Slim\LogWriter,
-            'Map' instanceof \Trotch\Map,
-            'User' instanceof \Trotch\User,
         ]
     ];
 

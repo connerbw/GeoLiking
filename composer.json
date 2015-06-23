@@ -7,15 +7,15 @@
         { "name": "Dac Chartrand", "email": "dac.chartrand@gmail.com" }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "components/foundation": "5.3.*",
-        "components/jquery": "1.11.*",
+        "php": ">=5.5.0",
+        "components/foundation": "5.5.*",
+        "components/jquery": "2.1.*",
         "components/jquery-cookie": "1.4.*",
         "jamend/selective-orm": "dev-master",
         "mrclay/minify": "2.2.*",
-        "slim/slim": "2.*",
+        "slim/slim": "2.6.*",
         "pimple/pimple": "~3.0",
-        "hybridauth/hybridauth": "2.2.*"
+        "hybridauth/hybridauth": "2.4.*"
     },
     "autoload": {
         "psr-4": { "Trotch\\": "lib/" }
