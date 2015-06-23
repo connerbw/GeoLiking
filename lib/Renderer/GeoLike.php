@@ -49,8 +49,8 @@ class GeoLike extends Renderer
      */
     protected function post()
     {
+        global $CONFIG;
         unset($_SESSION['token']);
-        $app = Container::get('App');
-        $app->redirect('/');
+        Container::get('App')->redirect($CONFIG['URL']);
     }
 }

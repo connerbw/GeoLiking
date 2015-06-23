@@ -6,7 +6,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(-1);
 
+/**
+ * @see http://docs.slimframework.com/configuration/modes/
+ */
 $CONFIG['MODE'] = 'development';
+
+/**
+ * The url suffix to your site. For example, if your site is
+ * http://www.geoliking.com/ then '/' is appropriate. If your site is
+ * http://domain.com/foo/bar/ then '/foo/bar/' is the correct value.
+ */
+$CONFIG['URL'] = '/';
 
 /**
  * @see http://hybridauth.sourceforge.net/userguide/Configuration.html
@@ -22,7 +32,7 @@ $CONFIG['HYBRIDAUTH'] = array(
                 'id' => '__REPLACE_ME__',
                 'secret' => '__REPLACE_ME__'
             ],
-            'scope'   => 'publish_actions',
+            'scope' => 'publish_actions',
         ],
     ],
 );
