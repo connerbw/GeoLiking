@@ -21,6 +21,14 @@ class GeoLocation
 
     }
 
+    /**
+     * @return array [latitude, longitude]
+     */
+    function getDefaultPosition()
+    {
+        return $this->defaultPosition;
+    }
+
 
     /**
      * @return array [latitude, longitude]

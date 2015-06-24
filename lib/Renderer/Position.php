@@ -37,7 +37,7 @@ class Position extends Renderer
             $lat = $_GET['lat'];
             $lng = $_GET['lng'];
         } else {
-            throw new \LogicException('Invalid latitude and/or longitude');
+            list($lat, $lng) = Container::get('GeoLocation')->getDefaultPosition();
         }
 
         return [
