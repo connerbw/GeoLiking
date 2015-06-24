@@ -12,7 +12,7 @@
     <title>Geo Liking - Position</title>
     <link rel="stylesheet" href="minify.php/css">
     <script src="minify.php/js-head"></script>
-    <meta property="og:image" content="<?php echo $GLOBALS['CONFIG']['DOMAIN'] . $GLOBALS['CONFIG']['URL']; ?>img/GeolikesPug.jpg" />
+    <meta property="og:image" content="<?php echo $GLOBALS['CONFIG']['DOMAIN'] . $GLOBALS['CONFIG']['URL']; ?>img/GeolikingPlain.jpg" />
     <meta name="description" content="Attach a novelty sized foam Facebook thumb to a selfie stick and like stuff. Post Geolocation coordinates to your wall. All the cool people are doing it!" />
 </head>
 <body>
