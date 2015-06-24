@@ -28,7 +28,7 @@ $geoLikingText = "I liked {$lat}, {$lng}";
 <div class="row">
     <div class="large-8 columns">
         <div class="flex-video">
-            <iframe src="<?php echo "map?lat={$lat}&lng={$lng}"; ?>"></iframe>
+            <iframe src="<?php echo "map?lat={$lat}&amp;lng={$lng}"; ?>"></iframe>
         </div>
     </div>
 
