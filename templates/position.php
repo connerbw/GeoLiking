@@ -32,10 +32,29 @@
 
     <div class="large-4 columns">
         <p><i>"I liked <?php echo "$lat, $lng"; ?>"</i></p>
-        <p><a href="privacy">Privacy policy</a></p>
-        <p>Sourcecode available on <a href="https://github.com/connerbw/Trotch">GitHub</a></p>
         <p><a href="<?php echo $GLOBALS['CONFIG']['URL']; ?>" class="button secondary">Back to homepage</a></p>
+    </div>
+</div>
 
+
+
+<div class="row">
+    <div class="large-12 columns">
+        <h2 class="subheader">What is this?</h2>
+        <ul class="small-block-grid-3">
+            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Step 1: Get a selfie stick." src="img/GeolikesSelfieStick.jpg"></li>
+            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Step 2: Get a novelty sized foam Facebook thumb." src="img/GeolikesSelfieStickPutLike.jpg"></li>
+            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Step 3: Attach foam thumb to selfie stick." src="img/GeolikesSelfieStickLikeAttached.jpg"></li>
+            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Like stuff." src="img/GeolikesPug.jpg"></li>
+            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Like stuff with your friends." src="img/GeolikesPug2sticks.jpg"></li>
+            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Like life!" src="img/GeolikesParachute.jpg"></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+        <p><a href="privacy">Privacy policy</a> - Sourcecode available on <a href="https://github.com/connerbw/Trotch">GitHub</a></p>
     </div>
 </div>
 
