@@ -26,6 +26,14 @@ $app->get(
 );
 
 $app->get(
+    '/position',
+    function () use ($app, $c) {
+        $r = new \Trotch\Renderer\Position();
+        $r->render();
+    }
+);
+
+$app->get(
     '/geolike',
     function () use ($app, $c) {
         $r = new \Trotch\Renderer\GeoLike();

@@ -30,14 +30,13 @@ class GeoLocation
         if (isset($_COOKIE['geoLikePos'])) {
             $geo = json_decode($_COOKIE['geoLikePos'], true);
             if (is_array($geo) && isset($geo['latitude']) && isset($geo['longitude'])) {
-                return array((float)$geo['latitude'], (float)$geo['longitude']);
+                return array((float) $geo['latitude'], (float) $geo['longitude']);
             }
         }
 
         try {
             return $this->getIpPosition($this->getIP());
-        }
-        catch (\UnexpectedValueException $e) {
+        } catch (\UnexpectedValueException $e) {
             return $this->defaultPosition;
         }
     }
@@ -55,7 +54,7 @@ class GeoLocation
             throw new \UnexpectedValueException("Cannot find position for IP: $ip");
         }
 
-        return array((float)$geo['latitude'], (float)$geo['longitude']);
+        return array((float) $geo['latitude'], (float) $geo['longitude']);
     }
 
 
@@ -97,8 +96,7 @@ class GeoLocation
 
         if ('km' == strtolower($unit)) {
             return ($miles * 1.609344);
-        }
-        else {
+        } else {
             return $miles;
         }
     }
@@ -121,5 +119,29 @@ class GeoLocation
 
         return array($lat3, $lon3);
     }
+
+
+    /**
+     * Is valid latitude?
+     *
+     * @param mixed $lat
+     * @return bool
+     */
+    function isValidLatitude($lat)
+    {
+        return (bool) preg_match('/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/', $lat);
+    }
+
+    /**
+     * Is valid longitude?
+     *
+     * @param mixed $lng
+     * @return bool
+     */
+    function isValidLongitude($lng)
+    {
+        return (bool) preg_match('/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$/', $lng);
+    }
+
 
 }

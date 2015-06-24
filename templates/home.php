@@ -83,7 +83,7 @@
 <div class="row">
     <div class="large-12 columns">
         <p><i>Clicking the above button will post: "I liked <?php echo "$lat, $lng"; ?>" to your Facebook wall.</i></p>
-        <p><a href="privacy">Privacy policy</a> - Sourcecode available on <a href="https://github.com/connerbw/Trotch">GitHub</a>.</p>
+        <p><a href="privacy">Privacy policy</a> - Sourcecode available on <a href="https://github.com/connerbw/Trotch">GitHub</a></p>
     </div>
 </div>
 

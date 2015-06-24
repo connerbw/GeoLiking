@@ -28,7 +28,7 @@
         <p>Third party vendors such as Google, Facebook, Etc. may use cookies and/or <a href="http://en.wikipedia.org/wiki/Web_bug">web beacons</a> to provide services on GeoLiking.com</p>
         <p>GeoLiking.com has no access or control over the technologies used by our third-party vendors.</p>
         <p>Thank you, the management.</p>
-        <p><a href="/">Back to homepage</a></p>
+        <p><a href="<?php echo $GLOBALS['CONFIG']['URL']; ?>" class="button secondary">Back to homepage</a></p>
     </div>
 </div>
 

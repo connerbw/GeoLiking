@@ -5,13 +5,13 @@ namespace Trotch\Renderer;
 use Trotch\Container;
 use Trotch\Renderer;
 
-class Map extends Renderer
+class Position extends Renderer
 {
 
     /**
      * @var string
      */
-    protected $template = 'map.php';
+    protected $template = 'position.php';
 
 
     /**
@@ -37,7 +37,7 @@ class Map extends Renderer
             $lat = $_GET['lat'];
             $lng = $_GET['lng'];
         } else {
-            list($lat, $lng) = Container::get('GeoLocation')->getPosition();
+            throw new \LogicException('Invalid latitude and/or longitude');
         }
 
         return [
@@ -54,4 +54,5 @@ class Map extends Renderer
     {
         // TODO: Implement post() method.
     }
+
 }
