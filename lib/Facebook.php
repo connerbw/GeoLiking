@@ -45,6 +45,11 @@ class Facebook
         $adapter->setUserStatus(
             array(
                 'message' => "I liked {$lat}, {$lng}",
+                'link' => $GLOBALS['CONFIG']['DOMAIN'] . $GLOBALS['CONFIG']['URL'] . "position?lat={$lat}&lng={$lng}",
+                'description' => "I liked {$lat}, {$lng}",
+                // 'og:type' => 'place',
+                // 'place:location:latitude' => $lat,
+                // 'place:location:longitude' => $lng,
             )
         );
     }

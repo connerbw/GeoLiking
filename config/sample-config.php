@@ -12,9 +12,15 @@ error_reporting(-1);
 $CONFIG['MODE'] = 'development';
 
 /**
+ * Site domain, with http:// (or https://) prefix, NO trailing slash!
+ */
+$CONFIG['DOMAIN'] = 'http://geoliking.com';
+
+/**
  * The url suffix to your site. For example, if your site is
  * http://www.geoliking.com/ then '/' is appropriate. If your site is
  * http://domain.com/foo/bar/ then '/foo/bar/' is the correct value.
+ * YES trailing slash!
  */
 $CONFIG['URL'] = '/';
 
