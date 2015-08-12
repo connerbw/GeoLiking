@@ -46,7 +46,7 @@ $geoLikingText = "I liked {$lat}, {$lng}";
             <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Step 2: Get a novelty sized foam Facebook thumb." src="img/GeolikesSelfieStickPutLike.jpg"></li>
             <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Step 3: Attach foam thumb to selfie stick." src="img/GeolikesSelfieStickLikeAttached.jpg"></li>
             <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Like stuff." src="img/GeolikesPug.jpg"></li>
-            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Like stuff with your friends." src="img/GeolikesPug2sticks.jpg"></li>
+            <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Like stuff with your friends." src="img/GeolikesConcert.jpg"></li>
             <li><img class="th has-tip" alt="" data-tooltip aria-haspopup="true" title="Like life!" src="img/GeolikesParachute.jpg"></li>
         </ul>
     </div>
