@@ -16,6 +16,8 @@ $geoLikingText = "I liked {$lat}, {$lng}";
     <script src="minify.php/js-head"></script>
     <meta property="og:image" content="<?php echo $GLOBALS['CONFIG']['DOMAIN'] . $GLOBALS['CONFIG']['URL']; ?>img/GeolikingPlain.jpg" />
     <meta name="description" content="<?php echo $geoLikingText; ?>" />
+    <meta property="place:location:latitude"  content="<?php echo $lat; ?>" />
+    <meta property="place:location:longitude" content="<?php echo $lng; ?>" />
 </head>
 <body>
 
