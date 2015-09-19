@@ -8,16 +8,18 @@ $geoLikingText = "I liked {$lat}, {$lng}";
 <!--[if IE 9]>
 <html class="lt-ie10" lang="en"> <![endif]-->
 <html class="no-js" lang="en">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geo Liking</title>
     <link rel="stylesheet" href="minify.php/css">
     <script src="minify.php/js-head"></script>
+    <meta property="og:type" content="place" />
+    <meta property="og:title" content="Geo Liking" />
     <meta property="og:image" content="<?php echo $GLOBALS['CONFIG']['DOMAIN'] . $GLOBALS['CONFIG']['URL']; ?>img/GeolikingPlain.jpg" />
-    <meta name="description" content="<?php echo $geoLikingText; ?>" />
     <meta property="place:location:latitude"  content="<?php echo $lat; ?>" />
     <meta property="place:location:longitude" content="<?php echo $lng; ?>" />
+    <meta name="description" content="<?php echo $geoLikingText; ?>" />
 </head>
 <body>
 
