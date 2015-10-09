@@ -23,8 +23,8 @@ $options = [
     ],
 ];
 
-// With the above, if you request http://example.org/minify.php/js, Apache
-// will set $_SERVER['PATH_INFO'] = '/js' and the sources in $options['groups']['js']
+// With the above, if you request http://example.org/minify.php/js-body, Apache
+// will set $_SERVER['PATH_INFO'] = '/js-body' and the sources in $options['groups']['js-body']
 // will be served.
 
 $_SERVER['DOCUMENT_ROOT'] = __DIR__;
