@@ -9,8 +9,6 @@
     "require": {
         "php": ">=5.5.0",
         "components/foundation": "5.5.*",
-        "components/jquery": "2.1.*",
-        "components/jquery-cookie": "1.4.*",
         "mrclay/minify": "2.2.*",
         "slim/slim": "2.6.*",
         "pimple/pimple": "~3.0",

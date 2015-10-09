@@ -11,12 +11,12 @@ $options = [
             '//css/base.css',
         ],
         'js-head' => [
-            '//components/modernizr/modernizr.js',
+            '//components/foundation/js/vendor/modernizr.js'
         ],
         'js-body' => [
-            '//components/jquery/jquery.min.js',
+            '//components/foundation/js/vendor/jquery.js',
             '//components/foundation/js/foundation.min.js',
-            '//components/jquery-cookie/jquery.cookie.js',
+            '//components/foundation/js/vendor/jquery.cookie.js',
             '//js/getCurrentUserPosition.js',
             '//js/FacebookSdk.js',
         ],
