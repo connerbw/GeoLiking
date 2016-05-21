@@ -21,7 +21,7 @@
             height: 100%;
         }
     </style>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3_48TRKzEkWT4m4Z4Mm0x4iSTT3cnrJY"></script>
     <script type="text/javascript">
         function initialize() {
             var mapOptions = {
