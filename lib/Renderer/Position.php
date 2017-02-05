@@ -1,9 +1,9 @@
 <?php
 
-namespace Trotch\Renderer;
+namespace GeoLiking\Renderer;
 
-use Trotch\Container;
-use Trotch\Renderer;
+use GeoLiking\Container;
+use GeoLiking\Renderer;
 
 class Position extends Renderer
 {

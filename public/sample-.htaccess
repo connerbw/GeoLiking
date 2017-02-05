@@ -3,9 +3,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [L,QSA]
 
-# Modify the RewriteBase if you are using Trotch in a subdirectory or in a
+# Modify the RewriteBase if you are using GeoLiking in a subdirectory or in a
 # VirtualDocumentRoot and the rewrite rules are not working properly.
-# For example if your site is at http://domain.com/~my/trotch uncomment and
+# For example if your site is at http://domain.com/~my/geoliking uncomment and
 # modify the following line:
 #
-# RewriteBase /~my/trotch
+# RewriteBase /~my/geoliking

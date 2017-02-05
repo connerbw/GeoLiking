@@ -24,7 +24,7 @@ ini_set('arg_separator.output', '&');
 
 // Initialize services
 if (!empty($CONFIG['PIMPLE'])) {
-    \Trotch\Container::init($CONFIG['PIMPLE']);
+    \GeoLiking\Container::init($CONFIG['PIMPLE']);
 } else {
-    \Trotch\Container::init();
+    \GeoLiking\Container::init();
 }

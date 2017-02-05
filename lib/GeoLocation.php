@@ -1,6 +1,6 @@
 <?php
 
-namespace Trotch;
+namespace GeoLiking;
 
 class GeoLocation
 {

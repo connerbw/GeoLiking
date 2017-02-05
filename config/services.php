@@ -16,11 +16,11 @@ $c['App'] = function ($c) {
 };
 
 $c['GeoLocation'] = function () {
-    return new \Trotch\GeoLocation();
+    return new \GeoLiking\GeoLocation();
 };
 
 $c['Facebook'] = function ($c) {
-    return new \Trotch\Facebook($c['GeoLocation']);
+    return new \GeoLiking\Facebook($c['GeoLocation']);
 };
 
 return $c;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Trotch;
+namespace GeoLiking;
 
 /**
  * Cheap factory style wrapper around \Pimple\Container() so that we can use

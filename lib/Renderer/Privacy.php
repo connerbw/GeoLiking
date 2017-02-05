@@ -1,8 +1,8 @@
 <?php
 
-namespace Trotch\Renderer;
+namespace GeoLiking\Renderer;
 
-use Trotch\Renderer;
+use GeoLiking\Renderer;
 
 class Privacy extends Renderer
 {

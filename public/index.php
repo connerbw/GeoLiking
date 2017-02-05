@@ -5,14 +5,14 @@ require(__DIR__ . '/initialize.php');
 
 /* Define routes */
 
-$c = new \Trotch\Container();
+$c = new \GeoLiking\Container();
 
 $app = $c::get('App');
 
 $app->get(
     '/',
     function () use ($app, $c) {
-        $r = new \Trotch\Renderer\Home();
+        $r = new \GeoLiking\Renderer\Home();
         $r->render();
     }
 );
@@ -20,7 +20,7 @@ $app->get(
 $app->get(
     '/map',
     function () use ($app, $c) {
-        $r = new \Trotch\Renderer\Map();
+        $r = new \GeoLiking\Renderer\Map();
         $r->render();
     }
 );
@@ -28,7 +28,7 @@ $app->get(
 $app->get(
     '/position',
     function () use ($app, $c) {
-        $r = new \Trotch\Renderer\Position();
+        $r = new \GeoLiking\Renderer\Position();
         $r->render();
     }
 );
@@ -36,7 +36,7 @@ $app->get(
 $app->get(
     '/geolike',
     function () use ($app, $c) {
-        $r = new \Trotch\Renderer\GeoLike();
+        $r = new \GeoLiking\Renderer\GeoLike();
         $r->render();
     }
 );
@@ -44,7 +44,7 @@ $app->get(
 $app->get(
     '/privacy',
     function () use ($app, $c) {
-        $r = new \Trotch\Renderer\Privacy();
+        $r = new \GeoLiking\Renderer\Privacy();
         $r->render();
     }
 );

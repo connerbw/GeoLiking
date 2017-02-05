@@ -58,7 +58,7 @@ $geoLikingText = "I liked {$lat}, {$lng}";
 
 <div class="row">
     <div class="large-12 columns">
-        <p><a href="privacy">Privacy policy</a> - Sourcecode available on <a href="https://github.com/connerbw/Trotch">GitHub</a></p>
+        <p><a href="privacy">Privacy policy</a> - Sourcecode available on <a href="https://github.com/connerbw/GeoLiking">GitHub</a></p>
     </div>
 </div>
 

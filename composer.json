@@ -1,7 +1,7 @@
 {
-    "name": "connerbw/Trotch",
+    "name": "connerbw/GeoLiking",
     "type": "project",
-    "homepage": "https://github.com/connerbw/Trotch",
+    "homepage": "https://github.com/connerbw/GeoLiking",
     "license": "LGPL 2.1",
     "authors": [
         { "name": "Dac Chartrand", "email": "dac.chartrand@gmail.com" }
@@ -15,7 +15,7 @@
         "hybridauth/hybridauth": "2.4.*"
     },
     "autoload": {
-        "psr-4": { "Trotch\\": "lib/" }
+        "psr-4": { "GeoLiking\\": "lib/" }
     },
     "config": {
         "component-dir": "public/components",

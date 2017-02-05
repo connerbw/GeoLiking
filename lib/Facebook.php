@@ -1,18 +1,18 @@
 <?php
 
-namespace Trotch;
+namespace GeoLiking;
 
 class Facebook
 {
 
     /**
-     * @var \Trotch\GeoLocation
+     * @var \GeoLiking\GeoLocation
      */
     protected $geo;
 
 
     /**
-     * @param \Trotch\GeoLocation $geo
+     * @param \GeoLiking\GeoLocation $geo
      */
     function __construct($geo)
     {

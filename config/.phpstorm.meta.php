@@ -7,10 +7,10 @@ namespace PHPSTORM_META {
     /** @noinspection PhpUnusedLocalVariableInspection */
     /** @noinspection PhpIllegalArrayKeyTypeInspection */
     $STATIC_METHOD_TYPES = [
-        \Trotch\Container::get('') => [
+        \GeoLiking\Container::get('') => [
             'App' instanceof \Slim\Slim,
-            'GeoLocation' instanceof \Trotch\GeoLocation,
-            'Facebook' instanceof \Trotch\Facebook,
+            'GeoLocation' instanceof \GeoLiking\GeoLocation,
+            'Facebook' instanceof \GeoLiking\Facebook,
             'Log' instanceof \Slim\LogWriter,
         ]
     ];
