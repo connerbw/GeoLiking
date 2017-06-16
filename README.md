@@ -3,7 +3,7 @@ Geo Liking
 
 _We guarantee results marginally better than random™_
 
-This is the source code that runs [GeoLiking.com](http://geoliking.com)
+This is the source code that ran ~GeoLiking.com~
 
 Illustrations by [Shie Kasai](http://www.shiekasai.com)
 
